@@ -161,7 +161,7 @@
                                 <rect key="frame" x="4" y="92" width="406" height="766"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="225" translatesAutoresizingMaskIntoConstraints="NO" id="XKx-DJ-6eQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="401.5" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="401.5" height="33"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;connected device&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVK-pr-tKJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="156.5" height="20.5"/>
@@ -175,7 +175,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="jAW-V7-eqF">
-                                        <rect key="frame" x="0.0" y="41" width="406" height="32"/>
+                                        <rect key="frame" x="0.0" y="39" width="406" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Test ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fg9-dF-MnC">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="32"/>
@@ -200,9 +200,9 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="Ssi-ka-lFa">
-                                        <rect key="frame" x="0.0" y="79" width="406" height="32"/>
+                                        <rect key="frame" x="0.0" y="77" width="406" height="32"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Ping rate (ms)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vv8-uT-n7N">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Ping rate delay (ms)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vv8-uT-n7N">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="170" id="HJk-65-YJG"/>
@@ -225,9 +225,9 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="UyU-mC-sM3">
-                                        <rect key="frame" x="0.0" y="117" width="406" height="32"/>
+                                        <rect key="frame" x="0.0" y="115" width="406" height="32"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Duration (seconds)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XuA-YI-YtB">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Iterations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XuA-YI-YtB">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="170" id="hvq-Dj-vn0"/>
@@ -250,7 +250,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="3GR-Ex-eMW">
-                                        <rect key="frame" x="0.0" y="155" width="406" height="32"/>
+                                        <rect key="frame" x="0.0" y="153" width="406" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Payload Bytes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcX-Cw-eOY">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="32"/>
@@ -275,7 +275,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="ro9-tA-iaI">
-                                        <rect key="frame" x="0.0" y="193" width="406" height="32"/>
+                                        <rect key="frame" x="0.0" y="191" width="406" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbW-ji-DLc">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="32"/>
@@ -300,7 +300,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="131" translatesAutoresizingMaskIntoConstraints="NO" id="1zv-JA-biH">
-                                        <rect key="frame" x="0.0" y="231" width="350" height="32"/>
+                                        <rect key="frame" x="0.0" y="229" width="350" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Confirm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j85-z6-eWe">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="32"/>
@@ -323,7 +323,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIp-5u-f2Y" userLabel="Start Test Button">
-                                        <rect key="frame" x="0.0" y="269" width="148" height="40"/>
+                                        <rect key="frame" x="0.0" y="267" width="148" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="4Tf-5P-jeQ"/>
                                         </constraints>
@@ -333,7 +333,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyk-qA-nzt">
-                                        <rect key="frame" x="0.0" y="315" width="150.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="313" width="150.5" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="cMt-C0-mEz"/>
                                         </constraints>
@@ -344,7 +344,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkS-d7-Ldm">
-                                        <rect key="frame" x="0.0" y="361" width="104" height="40"/>
+                                        <rect key="frame" x="0.0" y="359" width="104" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="0SN-yk-BPL"/>
                                         </constraints>
@@ -355,7 +355,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status/Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fd-JU-7GQ">
-                                        <rect key="frame" x="0.0" y="407" width="109.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="405" width="109.5" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ESx-sL-7OM"/>
                                         </constraints>
@@ -364,17 +364,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;results&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRl-m6-eP7">
-                                        <rect key="frame" x="0.0" y="453" width="300" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="RT3-Qt-txm"/>
-                                            <constraint firstAttribute="height" constant="40" id="e45-lJ-S8j"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="451" width="71.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;bytes per minute&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2G-UH-f3C">
+                                        <rect key="frame" x="0.0" y="490.5" width="148.5" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDf-A8-LZA">
-                                        <rect key="frame" x="0.0" y="499" width="78" height="267"/>
+                                        <rect key="frame" x="0.0" y="529.5" width="78" height="236.5"/>
                                         <state key="normal" title="Disconnect"/>
                                         <connections>
                                             <action selector="onDisconnect:" destination="oMb-qv-acF" eventType="touchUpInside" id="8vf-yG-5i7"/>
@@ -396,6 +398,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="byteRate" destination="Q2G-UH-f3C" id="9j3-Ez-4dU"/>
                         <outlet property="confirmSend" destination="NuK-8N-5UQ" id="2PM-JL-gwT"/>
                         <outlet property="dataRate" destination="4Qq-da-vIc" id="i0u-dy-mpv"/>
                         <outlet property="devName" destination="NVK-pr-tKJ" id="2y1-Ws-wYk"/>

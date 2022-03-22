@@ -26,6 +26,7 @@ class BLEperipheralViewController:  UIViewController,
     @IBOutlet weak var dataRate: UITextField!
     @IBOutlet weak var confirmSend: UISwitch!
     @IBOutlet weak var testResults: UILabel!
+    @IBOutlet weak var byteRate: UILabel!
     
     var parentView : ViewController? = nil
     
@@ -45,6 +46,8 @@ class BLEperipheralViewController:  UIViewController,
 
     var cmdCharServiceIndex : Int = -1
     var cmdCharCharIndex : Int = 0
+    
+    var startTime : time_t = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,12 +121,13 @@ class BLEperipheralViewController:  UIViewController,
         dataRate.inputAccessoryView = toolbar
         
         testID.text = "1"
-        pingRate.text = "1000"
-        testDuration.text = "60"
-        payloadLen.text = "32"
+        pingRate.text = "100"
+        testDuration.text = "200"
+        payloadLen.text = "48"
         dataRate.text = "3"
         
         testResults.text = "not running"
+        byteRate.text = "-"
     }
        
     @objc func doneButtonTapped() {
@@ -255,8 +259,39 @@ class BLEperipheralViewController:  UIViewController,
         print("read uuid=\(characteristic.uuid) value=\(rv)")
         DispatchQueue.main.async { () -> Void in
             if rv != self.lastReadValue {
+                var now : time_t = 0;
+                
+                time(&now);
+                
                 self.lastReadValue = rv
                 self.testResults.text = rv
+                
+                // find byte in results inside ()
+                if let bstart = rv.firstIndex(of: "(") {
+                    if let bend   = rv.firstIndex(of: ")") {
+                        let bytestr = rv[rv.index(after: bstart)..<bend]
+                
+                        if let bytecount = Int(bytestr) {
+                            var delta = now - self.startTime;
+                            
+                            if (delta == 0) {
+                                delta = 1;
+                            }
+                            
+                            let bps = bytecount / delta;
+                            let bpm = 60 * bps;
+                            
+                            var brstr : String = ""
+                            
+                            if (bpm > 0) {
+                                brstr = String(format: "%d bytes/min", bpm)
+                            } else {
+                                brstr = String(format: "%d bytes/sec", bps)
+                            }
+                            self.byteRate.text = brstr
+                        }
+                    }
+                }
             }
         }
     }
@@ -268,18 +303,20 @@ class BLEperipheralViewController:  UIViewController,
     
     @IBAction func startTest(_ sender: Any) {
         let tid = UInt(testID.text!) ?? 1
-        let rate = UInt(pingRate.text!) ?? 1000
-        let duration = UInt(testDuration.text!) ?? 60
+        let rate = UInt(pingRate.text!) ?? 10
+        let duration = UInt(testDuration.text!) ?? 200
         let paylen = UInt(payloadLen.text!) ?? 32
         let datarate = UInt(dataRate.text!) ?? 3
         let confirm = confirmSend.isOn
     
-        let cmdstr = String(format:"%@ %u %u %u %u %d", "lorawan pong", paylen, rate, duration, tid, confirm ? 1 : 0)
+        let cmdstr = String(format:"%@ %u %u %u %u %d 1", "lorawan ping", paylen, rate, duration, tid, confirm ? 1 : 0)
         
         if cmdCharServiceIndex >= 0 {
             let commandCharacteristic = characters[cmdCharServiceIndex][cmdCharCharIndex]
 
             writeValue(commandCharacteristic, dataToWrite: cmdstr)
+            
+            time(&startTime);
         }
         else {
             print("No command Characteristic to send command to")
@@ -290,6 +327,8 @@ class BLEperipheralViewController:  UIViewController,
         if cmdCharServiceIndex >= 0 {
             let commandCharacteristic = characters[cmdCharServiceIndex][cmdCharCharIndex]
 
+            testResults.text = "not running"
+            
             writeValue(commandCharacteristic, dataToWrite: "lorawan stop")
         }
         else {
