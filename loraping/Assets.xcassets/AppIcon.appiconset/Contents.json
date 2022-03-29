@@ -1,13 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "lora40.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "lora60.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
@@ -23,22 +21,25 @@
       "size" : "29x29"
     },
     {
+      "filename" : "loraping80.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "lora120.png",
+      "filename" : "loraping120.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
+      "filename" : "loraping120i.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
+      "filename" : "loraping180.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
@@ -64,16 +65,19 @@
       "size" : "29x29"
     },
     {
+      "filename" : "loraping40.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
     },
     {
+      "filename" : "loraping80i.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
+      "filename" : "loraping76.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
@@ -84,11 +88,13 @@
       "size" : "76x76"
     },
     {
+      "filename" : "loraping167.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
+      "filename" : "loraping.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"

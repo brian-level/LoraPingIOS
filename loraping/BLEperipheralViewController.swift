@@ -15,16 +15,8 @@ class BLEperipheralViewController:  UIViewController,
     //MARK: Properties
     @IBOutlet weak var devName: UILabel!
     @IBOutlet weak var findActivity: UIActivityIndicatorView!
-    @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var lightToggle: UIButton!
     @IBOutlet weak var disconnectButton: UIButton!
-    @IBOutlet weak var testID: UITextField!
-    @IBOutlet weak var pingRate: UITextField!
-    @IBOutlet weak var testDuration: UITextField!
-    @IBOutlet weak var payloadLen: UITextField!
-    @IBOutlet weak var dataRate: UITextField!
-    @IBOutlet weak var confirmSend: UISwitch!
     @IBOutlet weak var testResults: UILabel!
     @IBOutlet weak var byteRate: UILabel!
     
@@ -77,14 +69,9 @@ class BLEperipheralViewController:  UIViewController,
         // enumerate services
         thePeripheral?.discoverServices(nil)
         
-        confirmSend.setOn(false, animated: false)
-        
         setupTextFields();
-        
-        dataRate.isEnabled = false
-        
+         
         // start polling status
-        //
         pollTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(pollStatus), userInfo: nil, repeats: true)
     }
 
@@ -107,25 +94,7 @@ class BLEperipheralViewController:  UIViewController,
            
         toolbar.setItems([flexSpace, doneButton], animated: true)
         toolbar.sizeToFit()
-        
-        testID.keyboardType = UIKeyboardType.numberPad;
-        pingRate.keyboardType = UIKeyboardType.numberPad;
-        testDuration.keyboardType = UIKeyboardType.numberPad;
-        payloadLen.keyboardType = UIKeyboardType.numberPad;
-        dataRate.keyboardType = UIKeyboardType.numberPad;
-
-        testID.inputAccessoryView = toolbar
-        pingRate.inputAccessoryView = toolbar
-        testDuration.inputAccessoryView = toolbar
-        payloadLen.inputAccessoryView = toolbar
-        dataRate.inputAccessoryView = toolbar
-        
-        testID.text = "1"
-        pingRate.text = "100"
-        testDuration.text = "200"
-        payloadLen.text = "48"
-        dataRate.text = "3"
-        
+               
         testResults.text = "not running"
         byteRate.text = "-"
     }
@@ -297,45 +266,6 @@ class BLEperipheralViewController:  UIViewController,
     }
 
     //MARK: Control functions
-    @IBAction func onUseConfirm(_ sender: Any) {
-        _ = confirmSend.isOn;
-    }
-    
-    @IBAction func startTest(_ sender: Any) {
-        let tid = UInt(testID.text!) ?? 1
-        let rate = UInt(pingRate.text!) ?? 10
-        let duration = UInt(testDuration.text!) ?? 200
-        let paylen = UInt(payloadLen.text!) ?? 32
-        let datarate = UInt(dataRate.text!) ?? 3
-        let confirm = confirmSend.isOn
-    
-        let cmdstr = String(format:"%@ %u %u %u %u %d 1", "lorawan ping", paylen, rate, duration, tid, confirm ? 1 : 0)
-        
-        if cmdCharServiceIndex >= 0 {
-            let commandCharacteristic = characters[cmdCharServiceIndex][cmdCharCharIndex]
-
-            writeValue(commandCharacteristic, dataToWrite: cmdstr)
-            
-            time(&startTime);
-        }
-        else {
-            print("No command Characteristic to send command to")
-        }
-    }
-    
-    @IBAction func stopTest(_ sender: Any) {
-        if cmdCharServiceIndex >= 0 {
-            let commandCharacteristic = characters[cmdCharServiceIndex][cmdCharCharIndex]
-
-            testResults.text = "not running"
-            
-            writeValue(commandCharacteristic, dataToWrite: "lorawan stop")
-        }
-        else {
-            print("No command Characteristic to send command to")
-        }
-    }
-    
     @IBAction func lightToggle(_ sender: Any) {
         if cmdCharServiceIndex >= 0 {
             let commandCharacteristic = characters[cmdCharServiceIndex][cmdCharCharIndex]
@@ -346,7 +276,6 @@ class BLEperipheralViewController:  UIViewController,
             print("No command Characteristic to send command to")
         }
     }
-    
     
     @IBAction func onDisconnect(_ sender: Any) {
         pollTimer.invalidate()
