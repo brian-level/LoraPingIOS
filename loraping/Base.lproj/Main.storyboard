@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -126,7 +127,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="G7Z-ID-xJo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="XPq-5l-FHR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G7Z-ID-xJo" secondAttribute="bottom" constant="8" id="mnZ-zE-grT"/>
@@ -217,7 +218,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mp9-kS-auQ"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Mp9-kS-auQ" firstAttribute="trailing" secondItem="EPD-jc-jnt" secondAttribute="trailing" constant="4" id="4UJ-bS-vLX"/>
                             <constraint firstItem="Mp9-kS-auQ" firstAttribute="bottom" secondItem="EPD-jc-jnt" secondAttribute="bottom" constant="4" id="6wX-0N-YTi"/>
@@ -239,4 +240,9 @@
             <point key="canvasLocation" x="-4208.695652173913" y="-2902.9017857142858"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -249,6 +249,9 @@ class ViewController:
             print("Bluetooth status is POWERED OFF")
         case .poweredOn:
             print("Bluetooth status is POWERED ON")
+        @unknown default:
+            print("Bluetooth status is UNKOWN")
+            
         }
 
         if central.state == .poweredOn {

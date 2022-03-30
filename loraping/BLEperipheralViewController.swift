@@ -108,43 +108,24 @@ class BLEperipheralViewController:  UIViewController,
     }
     
     func readDeviceStatus() {
-        if true {
-            //let shortid = LevelHomecharacteristicUUIDs.StatusCharacteristicShortID.rawValue
-            
-            let statusCharUUID = CBUUID.init(string:String(format:"%04X", LevelHomecharacteristicUUIDs.StatusCharacteristicShortID.rawValue))
-            let changeCharUUID = CBUUID.init(string:String(format:"%04X", LevelHomecharacteristicUUIDs.LevelServiceChangedCharacteristicShortID.rawValue))
-            let consoleCharUUID = CBUUID.init(string:String(format:"%04X", LevelHomecharacteristicUUIDs.ConsoleCharacteristicShortID.rawValue))
-            let commandCharUUID = CBUUID.init(string:String(format:"%04X", LevelHomecharacteristicUUIDs.CommandCharacteristicShortID.rawValue))
+        let statusCharUUID = CBUUID.init(string:String(format:"%04X", LevelHomecharacteristicUUIDs.StatusCharacteristicShortID.rawValue))
+        let consoleCharUUID = CBUUID.init(string:String(format:"%04X", LevelHomecharacteristicUUIDs.ConsoleCharacteristicShortID.rawValue))
 
-            // find levelhome service in services list
-            for lockdex in 0..<services.count {
-                if services[lockdex].uuid == LevelHomeUUID {
-                    // find the console characteristic
-                    for chardex in 0..<characters[lockdex].count {
-                        if (characters[lockdex][chardex].uuid == consoleCharUUID) {
-                            writeValue(characters[lockdex][chardex], dataToWrite: "0123")
-                            break;
-                        }
-                    }
-                    // find lock current state char
-                    for chardex in 0..<characters[lockdex].count {
-                        if (characters[lockdex][chardex].uuid == statusCharUUID) {
-                            readValue(characters[lockdex][chardex])
-                            return
-                        }
+        // find levelhome service in services list
+        for lockdex in 0..<services.count {
+            if services[lockdex].uuid == LevelHomeUUID {
+                // find the console characteristic
+                for chardex in 0..<characters[lockdex].count {
+                    if (characters[lockdex][chardex].uuid == consoleCharUUID) {
+                        writeValue(characters[lockdex][chardex], dataToWrite: "0123")
+                        break;
                     }
                 }
-            }
-       } else {
-            // find lock service in services list
-            for lockdex in  0..<services.count {
-                if services[lockdex].uuid == HAPlockMechanismUUID {
-                    // find lock current state char
-                    for chardex in 0..<characters[lockdex].count {
-                        if (characters[lockdex][chardex].uuid == HAPlockMechName /*HAPlockMechCurrentState**/) {
-                            readValue(characters[lockdex][chardex])
-                            return
-                        }
+                // find lock current state char
+                for chardex in 0..<characters[lockdex].count {
+                    if (characters[lockdex][chardex].uuid == statusCharUUID) {
+                        readValue(characters[lockdex][chardex])
+                        return
                     }
                 }
             }
